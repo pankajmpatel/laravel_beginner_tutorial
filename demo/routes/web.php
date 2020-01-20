@@ -17,8 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/newPage', function () {
-    $variable='Hey! Data From Routes.';
+Route::get('/about','DemoController@about');
+Route::get('/service','ServiceController@index');
 
-    return view('newPage', compact('variable'));
-});
+Route::post('/service','ServiceController@store');
+
+//Route::view('/about', 'about');
+
+
+/* for Data From Route
+Route::get('/newPage', function(){
+$variable='Hey! Data from Route';
+
+return view('newPage', compact('variable'));
+} */
